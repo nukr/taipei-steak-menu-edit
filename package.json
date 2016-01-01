@@ -1,0 +1,21 @@
+{
+  "name": "taipei-steak-menu-edit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "standard": {
+    "parser": "babel-eslint"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^4.3.4"
+  },
+  "devDependencies": {
+    "babel-preset-es2015-node5": "^1.1.1",
+    "babel-preset-stage-0": "^6.3.13"
+  }
+}
