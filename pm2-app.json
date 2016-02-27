@@ -1,0 +1,8 @@
+{
+  "name": "taipei-steak-menu-edit",
+  "script": "index.js",
+  "watch": ["./main.js"],
+  "watch_options": {
+    "usePolling": true
+  }
+}

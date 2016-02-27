@@ -1,11 +1,16 @@
 import Meal from './models'
-import menu from './menu'
-
-let addMeals = menu.add.map(m => new Meal(m))
 
 ;(async () => {
-  let removeResult = await Promise.all(menu.remove.concat(menu.add).map(m => Meal.remove(m)))
-  console.log(removeResult)
-  let addResult = await Promise.all(addMeals.map(meal => meal.save()))
-  console.log(addResult)
+  await Meal.remove({category: 'sevenFive'})
+  let meals = await Meal.find({category: 'normal'})
+  meals = meals.map(meal => {
+    meal = meal.toObject()
+    delete meal._id
+    delete meal.__v
+    meal.price = Math.round((meal.price * 0.75 + 86) / 1.1)
+    meal.category = 'sevenFive'
+    return new Meal(meal).save()
+  })
+
+  await Promise.all(meals)
 })().catch(console.log)

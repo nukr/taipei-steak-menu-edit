@@ -1,6 +1,6 @@
 import mongoose, { Schema } from 'mongoose'
 
-mongoose.connect('mongodb://192.168.99.102/taipei_steak')
+mongoose.connect('mongodb://192.168.99.100/taipei_steak')
 
 const MealSchema = new Schema({
   name: String,
